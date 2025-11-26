@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>ACME Danışmanlık — İşinizi Dijitalleştiriyoruz</title>
+  <meta name="description" content="ACME Danışmanlık: küçük ve orta ölçekli işletmelere özel yazılım, strateji ve süreç danışmanlığı. Profesyonel çözümler, şeffaf fiyatlandırma, hızla uygulanan projeler.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#0f62fe">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ACME Danışmanlık",
+    "url": "https://example.com",
+    "logo": "https://example.com/logo.png",
+    "sameAs": []
+  }
+  </script>
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --primary:#0f62fe; --muted:#64748b; --accent:#06b6d4; --radius:12px;
+      --maxw:1100px; --glass: rgba(255,255,255,0.72);
+      font-size:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#0f1724;background:linear-gradient(180deg,var(--bg),#eef2f6)}
+    a{color:var(--primary);text-decoration:none}
+    header{backdrop-filter:saturate(1.1) blur(6px);position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.8);border-bottom:1px solid rgba(15,98,254,0.06)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .topbar{display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#6f9cff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600;color:rgba(15,23,36,0.9)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:56px 0}
+    .hero-card{background:linear-gradient(180deg,var(--card),#fbfdff);padding:36px;border-radius:18px;box-shadow:0 10px 30px rgba(12,42,90,0.06)}
+    h1{font-size:clamp(26px,4vw,40px);margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px;line-height:1.6}
+    .cta{display:flex;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;background:var(--primary);color:#fff;font-weight:700;border:0;cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--primary);border:1px solid rgba(15,98,254,0.12)}
+
+    /* right column - feature card */
+    .stats{display:flex;flex-direction:column;gap:12px}
+    .stat{background:var(--glass);padding:14px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+    .stat strong{font-size:20px}
+    /* Services grid */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
+    .service{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(12,42,90,0.04)}
+    .service h4{margin:0 0 8px}
+    .service p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Portfolio */
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(12,42,90,0.04)}
+
+    /* Team & pricing */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}
+
+    /* Contact form */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{padding:12px;border-radius:8px;border:1px solid #e6eef8;font-size:15px}
+    textarea{min-height:120px;resize:vertical}
+    .muted{color:var(--muted);font-size:14px}
+
+    footer{padding:36px 0;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .services,.portfolio{grid-template-columns:repeat(2,1fr)}
+      .two-col{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      .services,.portfolio{grid-template-columns:1fr}
+      nav ul{display:none}
+      .top-actions{display:none}
+    }
+
+    /* subtle animations */
+    .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .7s ease forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="logo">
+        <div class="mark">AC</div>
+        <div>
+          <div style="font-weight:800">ACME Danışmanlık</div>
+          <div style="font-size:13px;color:var(--muted)">Strateji · Yazılım · Süreç</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#home">Ana Sayfa</a></li>
+          <li><a href="#services">Hizmetler</a></li>
+          <li><a href="#portfolio">Projeler</a></li>
+          <li><a href="#pricing">Fiyatlar</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </nav>
+
+      <div class="top-actions">
+        <a class="btn" href="#contact">Teklif Al</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="hero-card fade-up" style="--delay:0s">
+        <h1>İşinizi dijitale taşıyacak, sürdürülebilir çözümler.</h1>
+        <p class="lead">ACME Danışmanlık; KOBİ'ler için özel yazılım, süreç otomasyonu ve eğitim hizmetleri sunar. Hızlı pilot projelerle riskleri küçültür, ölçülebilir sonuçlar üretiriz.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Ücretsiz Keşif</a>
+          <a class="btn secondary" href="#services">Hizmetlerimizi İncele</a>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:20px">
+          <div class="stat">
+            <div>
+              <div style="font-size:12px;color:var(--muted)">Tamamlanan Proje</div>
+              <strong>128</strong>
+            </div>
+            <div style="font-size:12px;color:var(--muted)">2020–2025</div>
+          </div>
+          <div class="stat">
+            <div>
+              <div style="font-size:12px;color:var(--muted)">Ortalama Teslim Süresi</div>
+              <strong>6 hafta</strong>
+            </div>
+            <div style="font-size:12px;color:var(--muted)">Pilot + Üretim</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="fade-up" style="--delay:0.15s">
+        <div class="card" style="padding:20px;max-width:420px">
+          <h3 style="margin:0 0 6px">Hızlı Teklif Hesaplayıcı</h3>
+          <p class="muted" style="margin:0 0 12px">Aşağıya temel bilgiyi girerek yaklaşık maliyet aralığını görebilirsiniz.</p>
+          <form id="quick-quote" onsubmit="return false">
+            <label class="muted">Proje Türü</label>
+            <select id="q-type">
+              <option>Web sitesi / Kurumsal</option>
+              <option>Özel Yazılım</option>
+              <option>Mobil Uygulama</option>
+              <option>Otomasyon / Entegrasyon</option>
+            </select>
+            <label class="muted">Karmaşıklık</label>
+            <select id="q-complex">
+              <option value="1">Basit</option>
+              <option value="2">Orta</option>
+              <option value="3">İleri</option>
+            </select>
+            <label class="muted">Tahmini Kullanıcı / Ay</label>
+            <input id="q-users" type="number" min="1" placeholder="Örn: 100" />
+            <button class="btn" style="margin-top:10px" onclick="calcQuote()">Tahmini Aralık Göster</button>
+          </form>
+          <div id="quote-result" style="margin-top:12px;color:var(--muted)"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="services">
+      <h2>Hizmetlerimiz</h2>
+      <div class="services fade-up">
+        <div class="service">
+          <h4>Yazılım Geliştirme</h4>
+          <p>Özel web ve mobil yazılımlar — temiz mimari, test odaklı geliştirme ve ölçeklenebilir altyapı.</p>
+        </div>
+        <div class="service">
+          <h4>Süreç Otomasyonu</h4>
+          <p>Manuel görevleri otomatikleştirerek zamandan tasarruf ve hata azaltma sağlıyoruz.</p>
+        </div>
+        <div class="service">
+          <h4>Danışmanlık & Eğitim</h4>
+          <p>İş süreçleri, ürün yönetimi ve teknik ekip eğitimleri ile iç yetkinlik kazandırıyoruz.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2>Seçilmiş Projeler</h2>
+      <div class="portfolio fade-up">
+        <div class="card">
+          <h3>e-Ticaret Platformu — Gıda</h3>
+          <p class="muted">%40 daha hızlı sipariş akışı, stok otomasyonu ve ödeme entegrasyonları.</p>
+        </div>
+        <div class="card">
+          <h3>İçerik Yönetimi — Eğitim</h3>
+          <p class="muted">Öğrenci verileri, raporlama ve içerik planlama modülleri.</p>
+        </div>
+        <div class="card">
+          <h3>CRM Entegrasyonu — Hizmet</h3>
+          <p class="muted">Mevcut CRM ile tam uyumlu müşteri yönetimi ve otomatik bildirimler.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>Fiyatlandırma (Örnek Paketler)</h2>
+      <div class="two-col fade-up">
+        <div class="card">
+          <h3>Başlangıç Paketi</h3>
+          <p class="muted">Web sitesi, temel SEO ve 1 aylık destek.</p>
+          <p style="font-weight:800;font-size:20px;margin:8px 0">₺8.500 - ₺15.000</p>
+          <ul class="muted">
+            <li>Responsive tasarım</li>
+            <li>İçerik yönetimi</li>
+            <li>1 eğitim oturumu</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Profesyonel Paket</h3>
+          <p class="muted">Özel yazılım, entegrasyonlar ve 3 aylık bakım.</p>
+          <p style="font-weight:800;font-size:20px;margin:8px 0">₺35.000 - ₺120.000</p>
+          <ul class="muted">
+            <li>API entegrasyonları</li>
+            <li>Otomasyon</li>
+            <li>SLAs ve 3 aylık destek</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted">Kişiye özel teklif almak için lütfen bize proje detayınızı gönderin — ücretsiz keşif ile gerçekçi bir teklif hazırlıyoruz.</p>
+    </section>
+
+    <section id="contact">
+      <h2>İletişim & Teklif Talebi</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>Bizimle iletişime geçin</h3>
+          <p class="muted">Aşağıdaki form ile proje özetinizi gönderin; 48 saat içinde dönüş yapacağız.</p>
+          <form id="contact-form">
+            <label class="muted">Şirket / Proje Adı</label>
+            <input name="company" required placeholder="ACME Ltd. / Proje X" />
+            <label class="muted">İsim & Pozisyon</label>
+            <input name="name" required placeholder="Adınız - Pozisyonunuz" />
+            <label class="muted">E-posta</label>
+            <input name="email" type="email" required placeholder="you@ornek.com" />
+            <label class="muted">Telefon (isteğe bağlı)</label>
+            <input name="phone" placeholder="(5xx) xxx xx xx" />
+            <label class="muted">Proje Özeti / Mesaj</label>
+            <textarea name="message" required placeholder="Kısa bir özet — hedefler, teknoloji tercihi, bütçe aralığı..."></textarea>
+            <button class="btn" type="submit">Gönder & Teklif İste</button>
+            <div id="form-feedback" class="muted" style="margin-top:8px"></div>
+          </form>
+        </div>
+
+        <aside class="card">
+          <h3>Ofis</h3>
+          <p class="muted">İstanbul, Türkiye<br/>Hafta içi 09:00 - 18:00</p>
+          <h4>Hızlı Bilgiler</h4>
+          <p class="muted">E-posta: <a href="mailto:info@example.com">info@example.com</a><br>Telefon: <a href="tel:+902123456789">+90 212 345 67 89</a></p>
+          <div style="margin-top:12px">
+            <h4>Gizlilik & Güvenlik</h4>
+            <p class="muted">Tüm proje verileri gizli tutulur; istek üzerine gizlilik sözleşmesi (NDA) imzalanır.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="team" style="margin-top:26px">
+      <h2>Ekibimiz</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div class="card" style="flex:1;min-width:220px">
+          <h4>Ayşe Yılmaz — CTO</h4>
+          <p class="muted">15+ yıl deneyimli yazılım mimarı, bulut ve ölçeklenebilir sistemler uzmanı.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px">
+          <h4>Mehmet Can — Ürün Yöneticisi</h4>
+          <p class="muted">Ürün stratejisi, kullanıcı araştırmaları ve roadmap planlama.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px">
+          <h4>Elif K.</h4>
+          <p class="muted">UI/UX tasarımcısı — erişilebilir, hızlı arayüzler tasarlar.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© 2025 ACME Danışmanlık — Tüm hakları saklıdır.</div>
+        <div style="color:var(--muted)">KVKK uyumludur · Gizlilik politikası mevcut</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Küçük yardımcı fonksiyonlar - form doğrulama, hızlı teklif hesaplama
+    function calcQuote(){
+      const complexity = +document.getElementById('q-complex').value || 1;
+      const users = Math.max(1, parseInt(document.getElementById('q-users').value||100,10));
+      // Basit matematik: temel + kullanıcı katkısı + karmaşıklık
+      let base = 5000; // TL
+      if (document.getElementById('q-type').value.includes('Özel')) base = 25000;
+      if (document.getElementById('q-type').value.includes('Mobil')) base = 30000;
+      const estimateLow = Math.round(base * complexity + users * 2);
+      const estimateHigh = Math.round(base * complexity * 4 + users * 6);
+      document.getElementById('quote-result').innerText = `Tahmini maliyet aralığı: ₺${estimateLow.toLocaleString('tr-TR')} — ₺${estimateHigh.toLocaleString('tr-TR')}`;
+    }
+
+    // Contact form - örnek: gerçek sunucu yoksa Console'a yaz, istersen Formspree veya benzeri entegrasyon ekleyebilirsin
+    document.getElementById('contact-form').addEventListener('submit', async function(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+      // Basit doğrulama
+      if(!data.name || !data.email || !data.message){
+        document.getElementById('form-feedback').innerText = 'Lütfen zorunlu alanları doldurun.'; return;
+      }
+      document.getElementById('form-feedback').innerText = 'Gönderiliyor...';
+
+      try{
+        // Eğer kendi backend'in yoksa burayı Formspree ya da serverless fonksiyonuna yönlendir.
+        // Aşağıdaki fetch örneği sahte bir endpoint'e gider; canlı kullanım için endpoint'i değiştir.
+        const resp = await fetch('https://example.com/api/contact', {
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
+        });
+        if(resp.ok){
+          document.getElementById('form-feedback').innerText = 'Mesajınız alındı — en kısa sürede dönüş yapacağız.';
+          form.reset();
+        } else {
+          throw new Error('Sunucu hatası');
+        }
+      }catch(err){
+        console.warn(err);
+        document.getElementById('form-feedback').innerText = 'Gönderim sırasında bir hata oluştu. Lütfen e-posta ile ulaşın: info@example.com';
+      }
+    });
+
+    // Basit erişilebilirlik: hash linklerine tıklayınca focus ver
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ el.setAttribute('tabindex','-1'); setTimeout(()=>el.focus(),100); }
+      });
+    });
+
+    // view animations
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.style.animationDelay = (i*0.06)+'s'; el.classList.add('fade-up'); });
+    });
+  </script>
+</body>
+</html>
